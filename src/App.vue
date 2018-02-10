@@ -1,9 +1,19 @@
 <template>
   <div>
-    <p>This is rendered by v-html <span v-html="hello"></span></p>
-    <p>This is rendered by v-text <span v-text="hello"></span></p>
-    <p>This is rendered by Mustache {{ hello }}</p>
-    {{ status? 'success' :'fail'}}
+    <ul>
+      <span>render Array</span>
+      <li v-for="(item,index) in list" :class="{odd:index % 2}">
+        {{ item.name }}-{{ item.price }}-{{index}}
+        </li>
+    </ul>
+
+     <ul>
+       <span>render Object</span>
+      <li v-for="(value,key) in objList">
+        {{ key}}:{{ value }}
+        </li>
+    </ul>
+ 
   </div>
 </template>
 
@@ -12,8 +22,21 @@ export default {
    data () {
     return {
       hello : '<span> hello</span>',
-      num :1,
-      status :true
+      list : [
+        {
+         name:'apple',
+         price : 34 
+        },
+        {
+         name:'banana',
+         price : 56 
+        }
+      ],
+      objList:{
+        name:'Apple',
+        price:30,
+        location:'Am'
+      }
     }
   }
 }
