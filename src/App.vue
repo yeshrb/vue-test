@@ -1,6 +1,9 @@
 <template>
   <div>
-    <HelloWorld></HelloWorld>
+    <ul>
+      <li v-for="item in list">{{item.name}}-{{item.price}}</li>
+    </ul>
+    <button @click="addItem">addItem</button>
   </div>
 </template>
 
@@ -31,6 +34,15 @@ export default {
   components : {
     HelloWorld,
   },
+  methods :{
+    addItem() {
+      this.list.push({
+        name:'pinapple',
+        price:60
+      })
+      
+    }
+  }
 }
 </script>
 
