@@ -1,24 +1,13 @@
 <template>
   <div>
-    <ul>
-      <span>render Array</span>
-      <li v-for="(item,index) in list" :class="{odd:index % 2}">
-        {{ item.name }}-{{ item.price }}-{{index}}
-        </li>
-    </ul>
-
-     <ul>
-       <span>render Object</span>
-      <li v-for="(value,key) in objList">
-        {{ key}}:{{ value }}
-        </li>
-    </ul>
- 
+    <HelloWorld></HelloWorld>
   </div>
 </template>
 
 <script>
+import HelloWorld from '@/components/HelloWorld'
 export default {
+  
    data () {
     return {
       hello : '<span> hello</span>',
@@ -38,7 +27,10 @@ export default {
         location:'Am'
       }
     }
-  }
+  },
+  components : {
+    HelloWorld,
+  },
 }
 </script>
 
