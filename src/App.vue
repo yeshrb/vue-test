@@ -13,6 +13,10 @@
     <button @click="toggle">toggle</button>
 
     <ComA @my-event="onMyEvent"> </ComA>
+    <input type="text" v-model="myVal"> {{myVal}}
+    <input type="text" v-model.lazy="myVal"> {{myVal}}
+
+  
 
     
   </div>
@@ -33,6 +37,7 @@ export default {
       url : 'http://www.bing.com',
       title :'必应',
       isPartA : true,
+      myVal:'',
       list : [
         {
          name:'apple',
