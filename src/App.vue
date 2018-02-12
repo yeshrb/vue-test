@@ -4,6 +4,7 @@
       <li v-for="item in list">{{item.name}}-{{item.price}}</li>
     </ul>
     <button @click="addItem">addItem</button>
+    <a :href="url" :title="title">baidu</a>
   </div>
 </template>
 
@@ -15,6 +16,8 @@ export default {
    data () {
     return {
       hello : '<span> hello</span>',
+      url : 'http://www.bing.com',
+      title :'必应',
       list : [
         {
          name:'apple',
