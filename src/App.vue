@@ -11,14 +11,22 @@
      <a v-show="isPartA">another PartA</a>
    
     <button @click="toggle">toggle</button>
+
+    <ComA @my-event="onMyEvent"> </ComA>
+
+    
   </div>
 </template>
 
 <script>
 import HelloWorld from '@/components/HelloWorld'
-import  Vue  from 'vue';
+import  Vue  from 'vue'
+import ComA from '@/components/comA'
 export default {
-  
+  components:{
+    ComA,
+    HelloWorld
+  },
    data () {
     return {
       hello : '<span> hello</span>',
@@ -42,9 +50,7 @@ export default {
       }
     }
   },
-  components : {
-    HelloWorld,
-  },
+ 
   methods :{
     addItem() {
       Vue.set(this.list,2,{
@@ -54,6 +60,9 @@ export default {
     },
     toggle() {
       this.isPartA = !this.isPartA
+    },
+    onMyEvent(e) {
+      console.log(e)
     }
   }
 }
