@@ -15,10 +15,10 @@
     <ComA @my-event="onMyEvent"> </ComA>
     <input type="text" v-model="myVal"> {{myVal}}
     <input type="text" v-model.lazy="myVal"> {{myVal}}
-
-  
-
-    
+    <input type="text" v-model="myVal"> {{myComputedVal}}
+    </br>
+    <input type="text" > {{getMyComputedVal()}}
+        
   </div>
 </template>
 
@@ -68,6 +68,15 @@ export default {
     },
     onMyEvent(e) {
       console.log(e)
+    },
+    getMyComputedVal(){
+      return Date.now();
+    }
+  },
+  computed:{
+    myComputedVal:function(){
+      //return this.myVal.replace(/\d/g,'')
+      return Date.now();
     }
   }
 }
