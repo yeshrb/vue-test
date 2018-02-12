@@ -5,6 +5,12 @@
     </ul>
     <button @click="addItem">addItem</button>
     <a :href="url" :title="title">baidu</a>
+    <a v-if="isPartA">isPartA</a>
+    <a v-else>isPartB</a>
+    </br>
+     <a v-show="isPartA">another PartA</a>
+   
+    <button @click="toggle">toggle</button>
   </div>
 </template>
 
@@ -18,6 +24,7 @@ export default {
       hello : '<span> hello</span>',
       url : 'http://www.bing.com',
       title :'必应',
+      isPartA : true,
       list : [
         {
          name:'apple',
@@ -44,11 +51,9 @@ export default {
         name:'pinapple',
         price:60
       })
-      // this.list.push({
-      //   name:'pinapple',
-      //   price:60
-      // })
-      
+    },
+    toggle() {
+      this.isPartA = !this.isPartA
     }
   }
 }
