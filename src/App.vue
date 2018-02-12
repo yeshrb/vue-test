@@ -9,6 +9,7 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld'
+import  Vue  from 'vue';
 export default {
   
    data () {
@@ -36,10 +37,14 @@ export default {
   },
   methods :{
     addItem() {
-      this.list.push({
+      Vue.set(this.list,2,{
         name:'pinapple',
         price:60
       })
+      // this.list.push({
+      //   name:'pinapple',
+      //   price:60
+      // })
       
     }
   }
