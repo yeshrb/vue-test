@@ -1,17 +1,8 @@
 <template>
   <div>
-    <ul>
-      <li v-for="item in list">{{item.name}}-{{item.price}}</li>
-    </ul>
-    <!-- <button @click="addItem">addItem</button>
-    <a :href="url" :title="title">baidu</a>
-    <a v-if="isPartA">isPartA</a>
-    <a v-else>isPartB</a>
-         <a v-show="isPartA">another PartA</a>   
-    <button @click="toggle">toggle</button>
-
-    <ComA @my-event="onMyEvent"> </ComA> -->
-    <input type="text" v-model="myVal"> {{myVal}}        
+    <input type="text" v-model="myVal">
+    <!-- <input type="text" name="fname" v-model="myVal"/> -->
+    <com-a :my-value="myVal" @my-event="onMyEvent">This is slot</com-a>        
   </div>
 </template>
 
@@ -26,6 +17,7 @@ export default {
   },
    data () {
     return {
+      comToRender:'com-a',
       hello : '<span> hello</span>',
       url : 'http://www.bing.com',
       title :'必应',
