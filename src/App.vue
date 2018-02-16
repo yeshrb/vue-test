@@ -3,22 +3,15 @@
     <ul>
       <li v-for="item in list">{{item.name}}-{{item.price}}</li>
     </ul>
-    <button @click="addItem">addItem</button>
+    <!-- <button @click="addItem">addItem</button>
     <a :href="url" :title="title">baidu</a>
     <a v-if="isPartA">isPartA</a>
     <a v-else>isPartB</a>
-    </br>
-     <a v-show="isPartA">another PartA</a>
-   
+         <a v-show="isPartA">another PartA</a>   
     <button @click="toggle">toggle</button>
 
-    <ComA @my-event="onMyEvent"> </ComA>
-    <input type="text" v-model="myVal"> {{myVal}}
-    <input type="text" v-model.lazy="myVal"> {{myVal}}
-    <input type="text" v-model="myVal"> {{myComputedVal}}
-    </br>
-    <input type="text" > {{getMyComputedVal()}}
-        
+    <ComA @my-event="onMyEvent"> </ComA> -->
+    <input type="text" v-model="myVal"> {{myVal}}        
   </div>
 </template>
 
@@ -77,6 +70,11 @@ export default {
     myComputedVal:function(){
       //return this.myVal.replace(/\d/g,'')
       return Date.now();
+    }
+  },
+  watch : {
+    myVal: function(val,oldVal) {
+      console.log('new value : '+val + ' old value : '+ oldVal) 
     }
   }
 }
